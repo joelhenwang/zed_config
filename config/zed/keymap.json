@@ -14,26 +14,16 @@
       "ctrl-l": "workspace::ActivatePaneRight",
       "shift-h": "pane::ActivatePreviousItem",
       "shift-l": "pane::ActivateNextItem",
-      "ctrl-a": "editor::SelectEnclosingSymbol",
-      "ctrl-s": "editor::SelectSmallerSyntaxNode",
       "shift-f": "editor::UnfoldLines",
       "space o": "file_finder::Toggle",
       "space c": "pane::CloseActiveItem",
       "space e": "project_panel::ToggleFocus",
       "space p e": "workspace::ToggleLeftDock",
-      "space h": "buffer_search::Dismiss",
       "ctrl-space": "workspace::ToggleBottomDock",
-      "space l s": "project_symbols::Toggle",
       "space l i": "editor::GoToImplementationSplit",
       "space l r": "editor::Rename",
       "space s t": "workspace::NewSearch",
-      "space b l": "pane::CloseItemsToTheRight",
-      "space b h": "pane::CloseItemsToTheLeft",
-      "space b a": "pane::ReopenClosedItem",
       "space g g": "git_panel::ToggleFocus",
-      "space g b": "git::Branch",
-      "ctrl-n": "menu::SelectNext", // Navigate down in lists (e.g., file finder, search results)
-      "ctrl-p": "menu::SelectPrevious", // Navigate up in lists
     },
   },
   {
@@ -43,8 +33,7 @@
       "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-k": "workspace::ActivatePaneUp",
       "ctrl-j": "workspace::ActivatePaneDown",
-      "ctrl-n": "menu::SelectNext", // Ensure workspace-wide list navigation
-      "ctrl-p": "menu::SelectPrevious",
+      "ctrl-a": "workspace::ToggleRightDock",
     },
   },
   {
@@ -105,27 +94,29 @@
   {
     "context": "vim_mode == normal || vim_mode == visual",
     "bindings": {
-      "s": "vim::PushSneak",
       "shift-s": "vim::PushSneakBackward",
-      "o": ["workspace::SendKeystrokes", "o space escape \" _ x"],
-      "O": ["workspace::SendKeystrokes", "O space escape \" _ x"],
       "PageUp": ["workspace::SendKeystrokes", "M ctrl-u"],
       "PageDown": ["workspace::SendKeystrokes", "M ctrl-d"],
       "shift-f": "editor::ToggleFold",
+      "space a i": "agent::ToggleAgentPane",
+      "ctrl-a": "workspace::ToggleRightDock",
     },
   },
   {
     "context": "vim_mode == normal",
     "bindings": {
+      "o": ["workspace::SendKeystrokes", "o space escape \" _ x"],
+      "O": ["workspace::SendKeystrokes", "O space escape \" _ x"],
       "space delete": "pane::CloseActiveItem",
       "ctrl-i": "editor::ToggleEditPrediction",
-      "alt-y": "editor::AcceptEditPrediction",
+      "alt-space": "editor::AcceptEditPrediction",
     },
   },
   {
     "context": "vim_mode == visual",
     "bindings": {
       "shift-s": "vim::PushAddSurrounds",
+      "ctrl-a": "agent::AddSelectionToThread",
     },
   },
 ]
