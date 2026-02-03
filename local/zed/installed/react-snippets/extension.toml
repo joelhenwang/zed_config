@@ -1,0 +1,24 @@
+id = "react-snippets"
+name = "React Snippets"
+version = "1.0.6"
+schema_version = 1
+description = "React snippets for zed code editor"
+repository = "https://github.com/tamimhasandev/react-snippets"
+authors = ["Tamim Hasan <me@tamimhasan.com>"]
+themes = []
+icon_themes = []
+languages = []
+snippets = "./snippets/javascript.json"
+capabilities = []
+
+[lib]
+
+[grammars]
+
+[language_servers]
+
+[context_servers]
+
+[slash_commands]
+
+[indexed_docs_providers]

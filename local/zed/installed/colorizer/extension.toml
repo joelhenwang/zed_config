@@ -1,0 +1,23 @@
+id = "colorizer"
+name = "Colorizer"
+version = "1.0.6"
+schema_version = 1
+description = "Colorizer is a vibrant Zed code editor theme that enhances readability with rich, contrasting colors, making your coding experience both efficient and enjoyable."
+repository = "https://github.com/tamimhasandev/colorizer"
+authors = ["Md Tamim Hasan <tamimhasandev@gmail.com>"]
+themes = ["themes/colorizer.json"]
+icon_themes = []
+languages = []
+capabilities = []
+
+[lib]
+
+[grammars]
+
+[language_servers]
+
+[context_servers]
+
+[slash_commands]
+
+[indexed_docs_providers]

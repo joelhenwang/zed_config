@@ -1,0 +1,62 @@
+id = "opencode"
+name = "OpenCode"
+version = "1.1.48"
+schema_version = 1
+description = "The open source coding agent."
+repository = "https://github.com/anomalyco/opencode"
+authors = ["Anomaly"]
+themes = []
+icon_themes = []
+languages = []
+capabilities = []
+
+[lib]
+
+[grammars]
+
+[language_servers]
+
+[context_servers]
+
+[agent_servers.opencode]
+name = "OpenCode"
+icon = "./icons/opencode.svg"
+
+[agent_servers.opencode.env]
+
+[agent_servers.opencode.targets.linux-aarch64]
+archive = "https://github.com/anomalyco/opencode/releases/download/v1.1.48/opencode-linux-arm64.tar.gz"
+cmd = "./opencode"
+args = ["acp"]
+
+[agent_servers.opencode.targets.linux-aarch64.env]
+
+[agent_servers.opencode.targets.linux-x86_64]
+archive = "https://github.com/anomalyco/opencode/releases/download/v1.1.48/opencode-linux-x64.tar.gz"
+cmd = "./opencode"
+args = ["acp"]
+
+[agent_servers.opencode.targets.linux-x86_64.env]
+
+[agent_servers.opencode.targets.windows-x86_64]
+archive = "https://github.com/anomalyco/opencode/releases/download/v1.1.48/opencode-windows-x64.zip"
+cmd = "./opencode.exe"
+args = ["acp"]
+
+[agent_servers.opencode.targets.windows-x86_64.env]
+
+[agent_servers.opencode.targets.darwin-aarch64]
+archive = "https://github.com/anomalyco/opencode/releases/download/v1.1.48/opencode-darwin-arm64.zip"
+cmd = "./opencode"
+args = ["acp"]
+
+[agent_servers.opencode.targets.darwin-aarch64.env]
+
+[agent_servers.opencode.targets.darwin-x86_64]
+archive = "https://github.com/anomalyco/opencode/releases/download/v1.1.48/opencode-darwin-x64.zip"
+cmd = "./opencode"
+args = ["acp"]
+
+[agent_servers.opencode.targets.darwin-x86_64.env]
+
+[slash_commands]

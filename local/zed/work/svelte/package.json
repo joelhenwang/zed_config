@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "svelte-language-server": "0.17.25",
+    "typescript-svelte-plugin": "0.3.50"
+  }
+}
