@@ -516,7 +516,7 @@
           "keyword": {
             "color": "#e87db9",
             "font_style": null,
-            "font_weight": null
+            "font_weight": 600
           },
           "number": {
             "color": "#ae81ff",
