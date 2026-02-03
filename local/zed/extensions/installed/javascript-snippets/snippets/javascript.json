@@ -1,0 +1,1161 @@
+{
+  // "Console Log": {
+  //   "prefix": "log",
+  //   "body": "console.log($0)"
+  // },
+  // "Console Warn": {
+  //   "prefix": "warn",
+  //   "body": "console.warn($0)"
+  // },
+  // "Console Error": {
+  //   "prefix": "error",
+  //   "body": "console.error($0)"
+  // },
+  "Console Table": {
+    "prefix": "ctable",
+    "body": "console.table($0)",
+  },
+  "Console Time": {
+    "prefix": "ctime",
+    "body": [
+      "console.time('${1:label}');",
+      "$0",
+      "console.timeEnd('${1:label}');",
+    ],
+  },
+  "Function": {
+    "prefix": "fn",
+    "body": ["function ${1:functionName}(${2:params}) {", "\t$0", "}"],
+  },
+  "Arrow Function": {
+    "prefix": "arfn",
+    "body": "const ${1:functionName} = (${2:params}) => {$0}",
+  },
+  // "Arrow Function Implicit Return": {
+  //   "prefix": "afi",
+  //   "body": "const ${1:functionName} = (${2:params}) => $0",
+  // },
+  "Async Function": {
+    "prefix": "asfn",
+    "body": ["async function ${1:functionName}(${2:params}) {", "\t$0", "}"],
+  },
+  "Async Arrow Function": {
+    "prefix": "asarfn",
+    "body": "const ${1:functionName} = async (${2:params}) => {$0}",
+  },
+  // "Anonymous Function": {
+  //   "prefix": "fn",
+  //   "body": ["function(${1:params}) {", "\t$0", "}"],
+  // },
+  // "IIFE": {
+  //   "prefix": "iife",
+  //   "body": ["(function(${1:params}) {", "\t$0", "})();"],
+  // },
+  // "Async IIFE": {
+  //   "prefix": "iiafe",
+  //   "body": ["(async function(${1:params}) {", "\t$0", "})();"],
+  // },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for (let ${1:i} = 0; ${1:i} < ${2:array}.length; ${1:i}++) {",
+      "\t$0",
+      "}",
+    ],
+  },
+  "For Of Loop": {
+    "prefix": "forof",
+    "body": ["for (const ${1:item} of ${2:array}) {", "\t$0", "}"],
+  },
+  "For In Loop": {
+    "prefix": "forin",
+    "body": [
+      "for (const ${1:key} in ${2:object}) {",
+      "\tif (${2:object}.hasOwnProperty(${1:key})) {",
+      "\t\t$0",
+      "\t}",
+      "}",
+    ],
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": ["while (${1:condition}) {", "\t$0", "}"],
+  },
+  "Do While Loop": {
+    "prefix": "dowhile",
+    "body": ["do {", "\t$0", "} while (${1:condition});"],
+  },
+  "ForEach": {
+    "prefix": "fre",
+    "body": "${1:array}.forEach((${2:item}) => {$0});",
+  },
+  // "Map": {
+  //   "prefix": "map",
+  //   "body": "${1:array}.map((${2:item}) => $0)",
+  // },
+  // "Filter": {
+  //   "prefix": "filter",
+  //   "body": "${1:array}.filter((${2:item}) => $0)",
+  // },
+  // "Reduce": {
+  //   "prefix": "reduce",
+  //   "body": "${1:array}.reduce((${2:acc}, ${3:item}) => {$0}, ${4:initialValue})",
+  // },
+  // "Find": {
+  //   "prefix": "find",
+  //   "body": "${1:array}.find((${2:item}) => $0)",
+  // },
+  // "Find Index": {
+  //   "prefix": "findi",
+  //   "body": "${1:array}.findIndex((${2:item}) => $0)",
+  // },
+  // "Some": {
+  //   "prefix": "some",
+  //   "body": "${1:array}.some((${2:item}) => $0)",
+  // },
+  // "Every": {
+  //   "prefix": "every",
+  //   "body": "${1:array}.every((${2:item}) => $0)",
+  // },
+  "If Statement": {
+    "prefix": "if",
+    "body": ["if (${1:condition}) {", "\t$0", "}"],
+  },
+  "If Else Statement": {
+    "prefix": "ife",
+    "body": ["if (${1:condition}) {", "\t$0", "} else {", "\t", "}"],
+  },
+  "Else If Statement": {
+    "prefix": "ei",
+    "body": ["else if (${1:condition}) {", "\t$0", "}"],
+  },
+  "Ternary Operator": {
+    "prefix": "ter",
+    "body": "${1:condition} ? ${2:true} : ${3:false}",
+  },
+  "Switch Statement": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:expression}) {",
+      "\tcase ${2:value}:",
+      "\t\t$0",
+      "\t\tbreak;",
+      "\tdefault:",
+      "\t\tbreak;",
+      "}",
+    ],
+  },
+  "Try Catch": {
+    "prefix": "tc",
+    "body": [
+      "try {",
+      "\t$0",
+      "} catch (${1:error}) {",
+      "\tconsole.error(${1:error});",
+      "}",
+    ],
+  },
+  "Try Catch Finally": {
+    "prefix": "tcf",
+    "body": [
+      "try {",
+      "\t$0",
+      "} catch (${1:error}) {",
+      "\tconsole.error(${1:error});",
+      "} finally {",
+      "\t",
+      "}",
+    ],
+  },
+  "Promise": {
+    "prefix": "promise",
+    "body": ["new Promise((resolve, reject) => {", "\t$0", "})"],
+  },
+  "Promise Then": {
+    "prefix": "thenc",
+    "body": [
+      "${1:promise}",
+      "\t.then((${2:result}) => {$0})",
+      "\t.catch((${3:error}) => {console.error(${3:error});});",
+    ],
+  },
+  "Async Await": {
+    "prefix": "await",
+    "body": "const ${1:result} = await ${2:promise};",
+  },
+  "Async Await Try": {
+    "prefix": "awaitc",
+    "body": [
+      "try {",
+      "\tconst ${1:result} = await ${2:promise};",
+      "\t$0",
+      "} catch (${3:error}) {",
+      "\tconsole.error(${3:error});",
+      "}",
+    ],
+  },
+  "Class": {
+    "prefix": "class",
+    "body": [
+      "class ${1:ClassName} {",
+      "\tconstructor(${2:params}) {",
+      "\t\t$0",
+      "\t}",
+      "}",
+    ],
+  },
+  "Class With Method": {
+    "prefix": "clm",
+    "body": [
+      "class ${1:ClassName} {",
+      "\tconstructor(${2:params}) {",
+      "\t\tthis.${3:property} = ${2:params};",
+      "\t}",
+      "",
+      "\t${4:methodName}(${5:params}) {",
+      "\t\t$0",
+      "\t}",
+      "}",
+    ],
+  },
+  "Class Extends": {
+    "prefix": "clx",
+    "body": [
+      "class ${1:ClassName} extends ${2:ParentClass} {",
+      "\tconstructor(${3:params}) {",
+      "\t\tsuper(${3:params});",
+      "\t\t$0",
+      "\t}",
+      "}",
+    ],
+  },
+  "Class Getter": {
+    "prefix": "get",
+    "body": ["get ${1:propertyName}() {", "\treturn this.${2:_property};", "}"],
+  },
+  "Class Setter": {
+    "prefix": "set",
+    "body": [
+      "set ${1:propertyName}(${2:value}) {",
+      "\tthis.${3:_property} = ${2:value};",
+      "}",
+    ],
+  },
+  "Static Method": {
+    "prefix": "sm",
+    "body": ["static ${1:methodName}(${2:params}) {", "\t$0", "}"],
+  },
+  "Import": {
+    "prefix": "imp",
+    "body": "import ${1:module} from '${2:path}';",
+  },
+  "Import Named": {
+    "prefix": "imn",
+    "body": "import { ${1:name} } from '${2:path}';",
+  },
+  "Import As": {
+    "prefix": "ima",
+    "body": "import * as ${1:alias} from '${2:path}';",
+  },
+  "Import Dynamic": {
+    "prefix": "imd",
+    "body": "const ${1:module} = await import('${2:path}');",
+  },
+  "Export Default": {
+    "prefix": "exp",
+    "body": "export default ${1:name};",
+  },
+  "Export Named": {
+    "prefix": "exn",
+    "body": "export { ${1:name} };",
+  },
+  "Export All": {
+    "prefix": "exa",
+    "body": "export * from '${1:path}';",
+  },
+  "Export Function": {
+    "prefix": "exf",
+    "body": ["export function ${1:functionName}(${2:params}) {", "\t$0", "}"],
+  },
+  "Export Const": {
+    "prefix": "exc",
+    "body": "export const ${1:name} = ${2:value};",
+  },
+  "Const": {
+    "prefix": "const",
+    "body": "const ${1:name} = ${2:value};",
+  },
+  "Let": {
+    "prefix": "let",
+    "body": "let ${1:name} = ${2:value};",
+  },
+  "Var": {
+    "prefix": "var",
+    "body": "var ${1:name} = ${2:value};",
+  },
+  "Destructuring Array": {
+    "prefix": "dsta",
+    "body": "const [${1:first}, ${2:second}] = ${3:array};",
+  },
+  "Destructuring Object": {
+    "prefix": "dsto",
+    "body": "const { ${1:property} } = ${2:object};",
+  },
+  "Spread Array": {
+    "prefix": "spa",
+    "body": "[...${1:array}]",
+  },
+  "Spread Object": {
+    "prefix": "spo",
+    "body": "{ ...${1:object} }",
+  },
+  "Rest Parameters": {
+    "prefix": "rp",
+    "body": "(...${1:args}) => {$0}",
+  },
+  "Object Literal": {
+    "prefix": "obj",
+    "body": ["{", "\t${1:key}: ${2:value}$0", "}"],
+  },
+  "Object Method": {
+    "prefix": "om",
+    "body": ["{", "\t${1:methodName}(${2:params}) {", "\t\t$0", "\t}", "}"],
+  },
+  "Object Shorthand": {
+    "prefix": "os",
+    "body": "{ ${1:property} }",
+  },
+  "Object Computed Property": {
+    "prefix": "oc",
+    "body": ["{", "\t[${1:key}]: ${2:value}$0", "}"],
+  },
+  "Array": {
+    "prefix": "array",
+    "body": "[${1:value}]",
+  },
+  "Array From": {
+    "prefix": "afrom",
+    "body": "Array.from(${1:arrayLike})",
+  },
+  "Array Of": {
+    "prefix": "aof",
+    "body": "Array.of(${1:elements})",
+  },
+  "Set": {
+    "prefix": "nset",
+    "body": "new Set([${1:values}])",
+  },
+  "new Map": {
+    "prefix": "nmap",
+    "body": "new Map([[${1:key}, ${2:value}]])",
+  },
+  "WeakSet": {
+    "prefix": "nws",
+    "body": "new WeakSet([${1:objects}])",
+  },
+  "WeakMap": {
+    "prefix": "nwm",
+    "body": "new WeakMap([[${1:key}, ${2:value}]])",
+  },
+  "Template Literal": {
+    "prefix": "tl",
+    "body": "`${1:text} \\${${2:variable}}`",
+  },
+  "Tagged Template": {
+    "prefix": "tt",
+    "body": "${1:tag}`${2:text} \\${${3:variable}}`",
+  },
+  "SetTimeout": {
+    "prefix": "sto",
+    "body": ["setTimeout(() => {", "\t$0", "}, ${1:delay});"],
+  },
+  "SetInterval": {
+    "prefix": "si",
+    "body": ["setInterval(() => {", "\t$0", "}, ${1:delay});"],
+  },
+  "ClearTimeout": {
+    "prefix": "cto",
+    "body": "clearTimeout(${1:timeoutId});",
+  },
+  "ClearInterval": {
+    "prefix": "ci",
+    "body": "clearInterval(${1:intervalId});",
+  },
+  "Fetch": {
+    "prefix": "fetch",
+    "body": [
+      "fetch('${1:url}')",
+      "\t.then(response => response.json())",
+      "\t.then(data => {$0})",
+      "\t.catch(error => console.error(error));",
+    ],
+  },
+  "Fetch Async": {
+    "prefix": "feta",
+    "body": [
+      "const response = await fetch('${1:url}');",
+      "const data = await response.json();",
+      "$0",
+    ],
+  },
+  "Fetch POST": {
+    "prefix": "fetp",
+    "body": [
+      "fetch('${1:url}', {",
+      "\tmethod: 'POST',",
+      "\theaders: {",
+      "\t\t'Content-Type': 'application/json'",
+      "\t},",
+      "\tbody: JSON.stringify(${2:data})",
+      "})",
+      "\t.then(response => response.json())",
+      "\t.then(data => {$0})",
+      "\t.catch(error => console.error(error));",
+    ],
+  },
+  "JSON Parse": {
+    "prefix": "jsp",
+    "body": "JSON.parse(${1:jsonString})",
+  },
+  "JSON Stringify": {
+    "prefix": "jss",
+    "body": "JSON.stringify(${1:object})",
+  },
+  "JSON Stringify Pretty": {
+    "prefix": "jssp",
+    "body": "JSON.stringify(${1:object}, null, 2)",
+  },
+  "Object Keys": {
+    "prefix": "ok",
+    "body": "Object.keys(${1:object})",
+  },
+  "Object Values": {
+    "prefix": "ov",
+    "body": "Object.values(${1:object})",
+  },
+  "Object Entries": {
+    "prefix": "oe",
+    "body": "Object.entries(${1:object})",
+  },
+  "Object Assign": {
+    "prefix": "oa",
+    "body": "Object.assign({}, ${1:target}, ${2:source})",
+  },
+  "Object Freeze": {
+    "prefix": "ofr",
+    "body": "Object.freeze(${1:object})",
+  },
+  "Object Seal": {
+    "prefix": "oseal",
+    "body": "Object.seal(${1:object})",
+  },
+  "Object Create": {
+    "prefix": "ocr",
+    "body": "Object.create(${1:prototype})",
+  },
+  "LocalStorage Set": {
+    "prefix": "lss",
+    "body": "localStorage.setItem('${1:key}', ${2:value});",
+  },
+  "LocalStorage Get": {
+    "prefix": "lsg",
+    "body": "localStorage.getItem('${1:key}')",
+  },
+  "LocalStorage Remove": {
+    "prefix": "lsr",
+    "body": "localStorage.removeItem('${1:key}');",
+  },
+  "LocalStorage Clear": {
+    "prefix": "lsc",
+    "body": "localStorage.clear();",
+  },
+  "SessionStorage Set": {
+    "prefix": "sss",
+    "body": "sessionStorage.setItem('${1:key}', ${2:value});",
+  },
+  "SessionStorage Get": {
+    "prefix": "ssg",
+    "body": "sessionStorage.getItem('${1:key}')",
+  },
+  "Document QuerySelector": {
+    "prefix": "qs",
+    "body": "document.querySelector('${1:selector}')",
+  },
+  "Document QuerySelectorAll": {
+    "prefix": "qsa",
+    "body": "document.querySelectorAll('${1:selector}')",
+  },
+  "Document GetElementById": {
+    "prefix": "gid",
+    "body": "document.getElementById('${1:id}')",
+  },
+  "Document GetElementsByClassName": {
+    "prefix": "gcl",
+    "body": "document.getElementsByClassName('${1:className}')",
+  },
+  "Document GetElementsByTagName": {
+    "prefix": "gt",
+    "body": "document.getElementsByTagName('${1:tagName}')",
+  },
+  "Document CreateElement": {
+    "prefix": "cel",
+    "body": "document.createElement('${1:tagName}')",
+  },
+  "AddEventListener": {
+    "prefix": "ael",
+    "body": [
+      "${1:element}.addEventListener('${2:event}', (${3:e}) => {",
+      "\t$0",
+      "});",
+    ],
+  },
+  "RemoveEventListener": {
+    "prefix": "rel",
+    "body": "${1:element}.removeEventListener('${2:event}', ${3:handler});",
+  },
+  "DOMContentLoaded": {
+    "prefix": "domr",
+    "body": [
+      "document.addEventListener('DOMContentLoaded', () => {",
+      "\t$0",
+      "});",
+    ],
+  },
+  "Window Load": {
+    "prefix": "wl",
+    "body": ["window.addEventListener('load', () => {", "\t$0", "});"],
+  },
+  "RequestAnimationFrame": {
+    "prefix": "raf",
+    "body": ["requestAnimationFrame(() => {", "\t$0", "});"],
+  },
+  "Generator Function": {
+    "prefix": "gen",
+    "body": ["function* ${1:generatorName}(${2:params}) {", "\tyield $0;", "}"],
+  },
+  "Async Generator": {
+    "prefix": "agen",
+    "body": [
+      "async function* ${1:generatorName}(${2:params}) {",
+      "\tyield $0;",
+      "}",
+    ],
+  },
+  "Proxy": {
+    "prefix": "proxy",
+    "body": [
+      "new Proxy(${1:target}, {",
+      "\tget(target, prop) {",
+      "\t\t$0",
+      "\t}",
+      "})",
+    ],
+  },
+  "Reflect Get": {
+    "prefix": "rget",
+    "body": "Reflect.get(${1:target}, '${2:property}')",
+  },
+  "Symbol": {
+    "prefix": "sym",
+    "body": "Symbol('${1:description}')",
+  },
+  "Symbol For": {
+    "prefix": "symf",
+    "body": "Symbol.for('${1:key}')",
+  },
+  "RegExp": {
+    "prefix": "re",
+    "body": "/${1:pattern}/${2:flags}",
+  },
+  "RegExp Test": {
+    "prefix": "ret",
+    "body": "/${1:pattern}/.test(${2:string})",
+  },
+  "String Match": {
+    "prefix": "match",
+    "body": "${1:string}.match(/${2:pattern}/${3:flags})",
+  },
+  "String Replace": {
+    "prefix": "replace",
+    "body": "${1:string}.replace(/${2:pattern}/${3:flags}, '${4:replacement}')",
+  },
+  "String Split": {
+    "prefix": "split",
+    "body": "${1:string}.split('${2:separator}')",
+  },
+  "String Trim": {
+    "prefix": "trim",
+    "body": "${1:string}.trim()",
+  },
+  "String Includes": {
+    "prefix": "includes",
+    "body": "${1:string}.includes('${2:searchString}')",
+  },
+  "String StartsWith": {
+    "prefix": "startswith",
+    "body": "${1:string}.startsWith('${2:searchString}')",
+  },
+  "String EndsWith": {
+    "prefix": "endswith",
+    "body": "${1:string}.endsWith('${2:searchString}')",
+  },
+  "String PadStart": {
+    "prefix": "padstart",
+    "body": "${1:string}.padStart(${2:targetLength}, '${3:padString}')",
+  },
+  "String PadEnd": {
+    "prefix": "padend",
+    "body": "${1:string}.padEnd(${2:targetLength}, '${3:padString}')",
+  },
+  "String Repeat": {
+    "prefix": "repeat",
+    "body": "${1:string}.repeat(${2:count})",
+  },
+  "Math Random": {
+    "prefix": "mra",
+    "body": "Math.random()",
+  },
+  "Math Floor": {
+    "prefix": "mfl",
+    "body": "Math.floor(${1:number})",
+  },
+  "Math Ceil": {
+    "prefix": "mce",
+    "body": "Math.ceil(${1:number})",
+  },
+  "Math Round": {
+    "prefix": "mro",
+    "body": "Math.round(${1:number})",
+  },
+  "Math Max": {
+    "prefix": "mmax",
+    "body": "Math.max(${1:numbers})",
+  },
+  "Math Min": {
+    "prefix": "mmin",
+    "body": "Math.min(${1:numbers})",
+  },
+  "Date Now": {
+    "prefix": "dnow",
+    "body": "Date.now()",
+  },
+  "New Date": {
+    "prefix": "ndate",
+    "body": "new Date()",
+  },
+  "Date ISO String": {
+    "prefix": "diso",
+    "body": "new Date().toISOString()",
+  },
+  "Use Strict": {
+    "prefix": "us",
+    "body": "'use strict';",
+  },
+  "Throw Error": {
+    "prefix": "ther",
+    "body": "throw new Error('${1:message}');",
+  },
+  "Custom Error": {
+    "prefix": "cerr",
+    "body": [
+      "class ${1:CustomError} extends Error {",
+      "\tconstructor(message) {",
+      "\t\tsuper(message);",
+      "\t\tthis.name = '${1:CustomError}';",
+      "\t}",
+      "}",
+    ],
+  },
+  "Typeof": {
+    "prefix": "tof",
+    "body": "typeof ${1:variable} === '${2:type}'",
+  },
+  "Instanceof": {
+    "prefix": "iof",
+    "body": "${1:object} instanceof ${2:Class}",
+  },
+  "Nullish Coalescing": {
+    "prefix": "nc",
+    "body": "${1:value} ?? ${2:defaultValue}",
+  },
+  "Optional Chaining": {
+    "prefix": "oc",
+    "body": "${1:object}?.${2:property}",
+  },
+  "Comment Block": {
+    "prefix": "cmt",
+    "body": ["/**", " * ${1:description}", " */"],
+  },
+  "JSDoc Function": {
+    "prefix": "jsdoc",
+    "body": [
+      "/**",
+      " * ${1:description}",
+      " * @param {${2:type}} ${3:paramName} - ${4:description}",
+      " * @returns {${5:type}} ${6:description}",
+      " */",
+    ],
+  },
+  "HTML5 Boilerplate": {
+    "prefix": "html",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang=\"${1:en}\">",
+      "<head>",
+      "\t<meta charset=\"UTF-8\">",
+      "\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "\t<title>${2:Document}</title>",
+      "</head>",
+      "<body>",
+      "\t$0",
+      "</body>",
+      "</html>",
+    ],
+  },
+  "Head": {
+    "prefix": "head",
+    "body": [
+      "<head>",
+      "\t<meta charset=\"UTF-8\">",
+      "\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "\t<title>${1:Document}</title>",
+      "</head>",
+    ],
+  },
+  "Abbreviation": {
+    "prefix": "abbr",
+    "body": "<abbr title=\"${1:title}\">${2:abbreviation}</abbr>",
+  },
+  "Address": {
+    "prefix": "address",
+    "body": "<address>$0</address>",
+  },
+  "Anchor": {
+    "prefix": "a",
+    "body": "<a href=\"${1:#}\">${2:Link}</a>",
+  },
+  "Area": {
+    "prefix": "area",
+    "body": "<area shape=\"${1:rect}\" coords=\"${2:0,0,0,0}\" href=\"${3:#}\" alt=\"${4:area}\">",
+  },
+  "Article": {
+    "prefix": "article",
+    "body": "<article>$0</article>",
+  },
+  "Aside": {
+    "prefix": "aside",
+    "body": "<aside>$0</aside>",
+  },
+  "Audio": {
+    "prefix": "audio",
+    "body": "<audio controls>$0</audio>",
+  },
+  "Bold": {
+    "prefix": "b",
+    "body": "<b>$0</b>",
+  },
+  "Base": {
+    "prefix": "base",
+    "body": "<base href=\"${1:/}\">",
+  },
+  "Bidirectional Override": {
+    "prefix": "bdo",
+    "body": "<bdo dir=\"${1:ltr}\">${2:text}</bdo>",
+  },
+  "Bidirectional Isolation": {
+    "prefix": "bdi",
+    "body": "<bdi>$0</bdi>",
+  },
+  "Blockquote": {
+    "prefix": "blockquote",
+    "body": "<blockquote cite=\"${1:source}\">${2:quote}</blockquote>",
+  },
+  "Body": {
+    "prefix": "body",
+    "body": ["<body>", "\t$0", "</body>"],
+  },
+  "Line Break": {
+    "prefix": "br",
+    "body": "<br>",
+  },
+  "Button": {
+    "prefix": "button",
+    "body": "<button type=\"${1:button}\">${2:Button}</button>",
+  },
+  "Canvas": {
+    "prefix": "canvas",
+    "body": "<canvas id=\"${1:canvas}\" width=\"${2:300}\" height=\"${3:150}\">$0</canvas>",
+  },
+  "Caption": {
+    "prefix": "caption",
+    "body": "<caption>$0</caption>",
+  },
+  "Cite": {
+    "prefix": "cite",
+    "body": "<cite>$0</cite>",
+  },
+  "Code": {
+    "prefix": "code",
+    "body": "<code>$0</code>",
+  },
+  "Column": {
+    "prefix": "col",
+    "body": "<col span=\"${1:1}\">",
+  },
+  "Column Group": {
+    "prefix": "colgroup",
+    "body": "<colgroup>$0</colgroup>",
+  },
+  "Data": {
+    "prefix": "data",
+    "body": "<data value=\"${1:value}\">${2:data}</data>",
+  },
+  "Data List": {
+    "prefix": "datalist",
+    "body": "<datalist id=\"${1:list}\">$0</datalist>",
+  },
+  "Definition Description": {
+    "prefix": "dd",
+    "body": "<dd>$0</dd>",
+  },
+  "Deleted Text": {
+    "prefix": "del",
+    "body": "<del datetime=\"${1:datetime}\">${2:deleted text}</del>",
+  },
+  "Details": {
+    "prefix": "details",
+    "body": "<details>${1:<summary>${2:Summary}</summary>}$0</details>",
+  },
+  "Definition": {
+    "prefix": "dfn",
+    "body": "<dfn>$0</dfn>",
+  },
+  "Dialog": {
+    "prefix": "dialog",
+    "body": "<dialog>$0</dialog>",
+  },
+  "Div": {
+    "prefix": "div",
+    "body": "<div>$0</div>",
+  },
+  "Definition List": {
+    "prefix": "dl",
+    "body": "<dl>$0</dl>",
+  },
+  "Definition Term": {
+    "prefix": "dt",
+    "body": "<dt>$0</dt>",
+  },
+  "Emphasis": {
+    "prefix": "em",
+    "body": "<em>$0</em>",
+  },
+  "Embed": {
+    "prefix": "embed",
+    "body": "<embed src=\"${1:source}\" type=\"${2:type}\">",
+  },
+  "Fieldset": {
+    "prefix": "fieldset",
+    "body": "<fieldset>${1:<legend>${2:Legend}</legend>}$0</fieldset>",
+  },
+  "Figure Caption": {
+    "prefix": "figcaption",
+    "body": "<figcaption>$0</figcaption>",
+  },
+  "Figure": {
+    "prefix": "figure",
+    "body": "<figure>$0</figure>",
+  },
+  "Footer": {
+    "prefix": "footer",
+    "body": "<footer>$0</footer>",
+  },
+  "Form": {
+    "prefix": "form",
+    "body": "<form action=\"${1:#}\" method=\"${2:post}\">$0</form>",
+  },
+  "Heading 1": {
+    "prefix": "h1",
+    "body": "<h1>$0</h1>",
+  },
+  "Heading 2": {
+    "prefix": "h2",
+    "body": "<h2>$0</h2>",
+  },
+  "Heading 3": {
+    "prefix": "h3",
+    "body": "<h3>$0</h3>",
+  },
+  "Heading 4": {
+    "prefix": "h4",
+    "body": "<h4>$0</h4>",
+  },
+  "Heading 5": {
+    "prefix": "h5",
+    "body": "<h5>$0</h5>",
+  },
+  "Heading 6": {
+    "prefix": "h6",
+    "body": "<h6>$0</h6>",
+  },
+  "Header": {
+    "prefix": "header",
+    "body": "<header>$0</header>",
+  },
+  "Heading Group": {
+    "prefix": "hgroup",
+    "body": "<hgroup>$0</hgroup>",
+  },
+  "Horizontal Rule": {
+    "prefix": "hr",
+    "body": "<hr>",
+  },
+  "HTML": {
+    "prefix": "html",
+    "body": "<html lang=\"${1:en}\">$0</html>",
+  },
+  "Italic": {
+    "prefix": "i",
+    "body": "<i>$0</i>",
+  },
+  "Iframe": {
+    "prefix": "iframe",
+    "body": "<iframe src=\"${1:source}\" width=\"${2:300}\" height=\"${3:200}\">$0</iframe>",
+  },
+  "Image": {
+    "prefix": "img",
+    "body": "<img src=\"${1:img/logo.png}\" alt=\"${2:Logo}\">",
+  },
+  "Input": {
+    "prefix": "input",
+    "body": "<input type=\"${1:text}\" name=\"${2:name}\" value=\"${3:value}\">",
+  },
+  "Inserted Text": {
+    "prefix": "ins",
+    "body": "<ins datetime=\"${1:datetime}\">${2:inserted text}</ins>",
+  },
+  "Keyboard Input": {
+    "prefix": "kbd",
+    "body": "<kbd>$0</kbd>",
+  },
+  "Label": {
+    "prefix": "label",
+    "body": "<label for=\"${1:name}\">${2:Label}</label>",
+  },
+  "Legend": {
+    "prefix": "legend",
+    "body": "<legend>$0</legend>",
+  },
+  "List Item": {
+    "prefix": "li",
+    "body": "<li>$0</li>",
+  },
+  "Link": {
+    "prefix": "link",
+    "body": "<link rel=\"${1:stylesheet}\" href=\"${2:css/style.css}\">",
+  },
+  "Main": {
+    "prefix": "main",
+    "body": "<main>$0</main>",
+  },
+  "Map": {
+    "prefix": "map",
+    "body": "<map name=\"${1:mapname}\">$0</map>",
+  },
+  "Mark": {
+    "prefix": "mark",
+    "body": "<mark>$0</mark>",
+  },
+  "Menu": {
+    "prefix": "menu",
+    "body": "<menu>$0</menu>",
+  },
+  "Meta Charset": {
+    "prefix": "meta:char",
+    "body": "<meta charset=\"${1:UTF-8}\">",
+  },
+  "Meta Description": {
+    "prefix": "meta:desc",
+    "body": "<meta name=\"description\" content=\"${1:Description}\">",
+  },
+  "Meta Keywords": {
+    "prefix": "meta:kw",
+    "body": "<meta name=\"keywords\" content=\"${1:Keywords}\">",
+  },
+  "Meta Viewport": {
+    "prefix": "meta:vp",
+    "body": "<meta name=\"viewport\" content=\"width=${1:device-width}, initial-scale=${2:1.0}\">",
+  },
+  "Meter": {
+    "prefix": "meter",
+    "body": "<meter value=\"${1:0.5}\" min=\"${2:0}\" max=\"${3:1}\">$0</meter>",
+  },
+  "Navigation": {
+    "prefix": "nav",
+    "body": "<nav>$0</nav>",
+  },
+  "No Script": {
+    "prefix": "noscript",
+    "body": "<noscript>$0</noscript>",
+  },
+  "Object": {
+    "prefix": "object",
+    "body": "<object data=\"${1:data}\" type=\"${2:type}\">$0</object>",
+  },
+  "Ordered List": {
+    "prefix": "ol",
+    "body": "<ol>$0</ol>",
+  },
+  "Option Group": {
+    "prefix": "optgroup",
+    "body": "<optgroup label=\"${1:label}\">$0</optgroup>",
+  },
+  "Option": {
+    "prefix": "option",
+    "body": "<option value=\"${1:value}\">${2:Option}</option>",
+  },
+  "Output": {
+    "prefix": "output",
+    "body": "<output for=\"${1:input}\" name=\"${2:output}\">$0</output>",
+  },
+  "Paragraph": {
+    "prefix": "p",
+    "body": "<p>$0</p>",
+  },
+  "Picture": {
+    "prefix": "picture",
+    "body": "<picture>$0</picture>",
+  },
+  "Preformatted Text": {
+    "prefix": "pre",
+    "body": "<pre>$0</pre>",
+  },
+  "Progress": {
+    "prefix": "progress",
+    "body": "<progress value=\"${1:0}\" max=\"${2:100}\">$0</progress>",
+  },
+  "Strikethrough": {
+    "prefix": "s",
+    "body": "<s>$0</s>",
+  },
+  "Sample Output": {
+    "prefix": "samp",
+    "body": "<samp>$0</samp>",
+  },
+  "Script": {
+    "prefix": "script",
+    "body": "<script src=\"${1:js/app.js}\"></script>",
+  },
+  "Search": {
+    "prefix": "search",
+    "body": "<search>$0</search>",
+  },
+  "Section": {
+    "prefix": "section",
+    "body": "<section>$0</section>",
+  },
+  "Select": {
+    "prefix": "select",
+    "body": "<select name=\"${1:name}\">$0</select>",
+  },
+  "Slot": {
+    "prefix": "slot",
+    "body": "<slot name=\"${1:name}\">$0</slot>",
+  },
+  "Small": {
+    "prefix": "small",
+    "body": "<small>$0</small>",
+  },
+  "Source": {
+    "prefix": "source",
+    "body": "<source src=\"${1:source}\" type=\"${2:type}\">",
+  },
+  "Span": {
+    "prefix": "span",
+    "body": "<span>$0</span>",
+  },
+  "Strong": {
+    "prefix": "strong",
+    "body": "<strong>$0</strong>",
+  },
+  "Subscript": {
+    "prefix": "sub",
+    "body": "<sub>$0</sub>",
+  },
+  "Summary": {
+    "prefix": "summary",
+    "body": "<summary>$0</summary>",
+  },
+  "Superscript": {
+    "prefix": "sup",
+    "body": "<sup>$0</sup>",
+  },
+  "Table": {
+    "prefix": "table",
+    "body": "<table>$0</table>",
+  },
+  "Table Body": {
+    "prefix": "tbody",
+    "body": "<tbody>$0</tbody>",
+  },
+  "Table Cell": {
+    "prefix": "td",
+    "body": "<td>$0</td>",
+  },
+  "Template": {
+    "prefix": "template",
+    "body": "<template>$0</template>",
+  },
+  "Textarea": {
+    "prefix": "textarea",
+    "body": "<textarea name=\"${1:name}\" rows=\"${2:8}\" cols=\"${3:80}\"></textarea>",
+  },
+  "Table Footer": {
+    "prefix": "tfoot",
+    "body": "<tfoot>$0</tfoot>",
+  },
+  "Table Header Cell": {
+    "prefix": "th",
+    "body": "<th>$0</th>",
+  },
+  "Table Header": {
+    "prefix": "thead",
+    "body": "<thead>$0</thead>",
+  },
+  "Time": {
+    "prefix": "time",
+    "body": "<time datetime=\"${1:datetime}\">${2:time}</time>",
+  },
+  "Title": {
+    "prefix": "title",
+    "body": "<title>${1:Document}</title>",
+  },
+  "Table Row": {
+    "prefix": "tr",
+    "body": "<tr>$0</tr>",
+  },
+  "Track": {
+    "prefix": "track",
+    "body": "<track src=\"${1:track.vtt}\" kind=\"${2:subtitles}\" srclang=\"${3:en}\" label=\"${4:English}\">",
+  },
+  "Underline": {
+    "prefix": "u",
+    "body": "<u>$0</u>",
+  },
+  "Unordered List": {
+    "prefix": "ul",
+    "body": "<ul>$0</ul>",
+  },
+  "Variable": {
+    "prefix": "var",
+    "body": "<var>$0</var>",
+  },
+  "Video": {
+    "prefix": "video",
+    "body": "<video controls>$0</video>",
+  },
+  "Word Break Opportunity": {
+    "prefix": "wbr",
+    "body": "<wbr>",
+  },
+}
